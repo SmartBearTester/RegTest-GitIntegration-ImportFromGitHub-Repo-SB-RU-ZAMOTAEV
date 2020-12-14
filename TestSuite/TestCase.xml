@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:testCase id="4f40ffc6-7469-4685-99f5-db19bf080803" discardOkResults="false" failOnError="true" failTestCaseOnErrors="true" keepSession="false" name="TestCase" searchProperties="true" timeout="0" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="4f40ffc6-7469-4685-99f5-db19bf080803fileName">TestCase</con:setting>
+  </con:settings>
+  <con:testStep type="restrequest" name="REST Request" id="431ae255-8e52-4ab7-a34e-0a3b43ae90ef">
+    <con:settings/>
+    <con:config service="Service 1" resourcePath="/WCFREST/Service.svc/transferArray" methodName="" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:restRequest name="REST Request" id="2e975e18-3563-4aee-82d4-ed5f48182c69" mediaType="application/json" postQueryString="false">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+        </con:settings>
+        <con:endpoint>http://rapis02.aqa.com.ru</con:endpoint>
+        <con:request>{
+  "DataSource": 
+  [
+        {
+            "id": "0001",
+            "type": "donut",
+            "name": "Cake",
+            "ppu": 0.34,
+            "batters":
+                {
+                    "batter":
+                        [
+                            { "id": "1001", "type": "Regular" },
+                            { "id": "1002", "type": "Chocolate" },
+                            { "id": "1003", "type": "Blueberry" },
+                            { "id": "1004", "type": "Devil's Food" }
+                        ]
+                },
+            "topping":
+                [
+                    { "id": "5001", "type": "None" },
+                    { "id": "5002", "type": "Glazed" },
+                    { "id": "5005", "type": "Sugar" },
+                    { "id": "5007", "type": "Powdered Sugar" },
+                    { "id": "5006", "type": "Chocolate with Sprinkles" },
+                    { "id": "5003", "type": "Chocolate" },
+                    { "id": "5004", "type": "Maple" }
+                ]
+        },
+        {
+            "id": "0002",
+            "type": "pie",
+            "name": "Raised",
+            "ppu": 0.55,
+            "batters":
+                {
+                    "batter":
+                        [
+                            { "id": "1001", "type": "Regular" }
+                        ]
+                },
+            "topping":
+                [
+                    { "id": "5001", "type": "None" },
+                    { "id": "5002", "type": "Glazed" },
+                    { "id": "5005", "type": "Sugar" },
+                    { "id": "5003", "type": "Chocolate" },
+                    { "id": "5004", "type": "Maple" }
+                ]
+        },
+        {
+            "id": "0003",
+            "type": "cake",
+            "name": "Old Fashioned",
+            "ppu": 0.87,
+            "batters":
+                {
+                    "batter":
+                        [
+                            { "id": "1001", "type": "Regular" },
+                            { "id": "1002", "type": "Chocolate" }
+                        ]
+                },
+            "topping":
+                [
+                    { "id": "5001", "type": "None" },
+                    { "id": "5002", "type": "Glazed" },
+                    { "id": "5003", "type": "Chocolate" },
+                    { "id": "5004", "type": "Maple" }
+                ]
+        }
+    ]
+}</con:request>
+        <con:assertion type="Valid HTTP Status Codes" id="eae01bc9-26ec-48bd-902f-900687b48802" name="Valid HTTP Status Codes">
+          <con:settings/>
+          <con:configuration>
+            <codes>200</codes>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="Response SLA Assertion" id="bb9e0e49-970d-42f7-ba39-a8f96006e401" name="Response SLA">
+          <con:configuration>
+            <SLA>200</SLA>
+          </con:configuration>
+        </con:assertion>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:parameters/>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:properties/>
+  <con:reportParameters/>
+</con:testCase>
